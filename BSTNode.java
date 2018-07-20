@@ -35,7 +35,8 @@ public class BSTNode {
 			Date todaydate = new Date();
 			String modfileDate = new SimpleDateFormat("yyyy-MM-dd").format(todaydate);
 			String today[] = modfileDate.split("-");
-			
+					
+			//format data
 			int todayYearInt = Integer.parseInt(today[0]);
 			int todayMonthInt = Integer.parseInt(today[1]);
 			int todayDayInt = Integer.parseInt(today[2]);
@@ -46,6 +47,7 @@ public class BSTNode {
 			birthYear = Integer.parseInt(date[2]);
 			int age = 0;
 			
+			//turn birthyear into age integer (based on present)
 			if (birthMonth < todayMonthInt) {
 					age = ((todayYearInt - birthYear) - 1);
 					return age;
