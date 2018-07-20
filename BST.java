@@ -17,49 +17,43 @@ public class BST {
 	}
 
 	protected BSTNode insert2(BSTNode root, BSTNode newNode) {
-			if (root == null) {
-					root = newNode;
-			} 
-		
-			else {			
-				if ((root.lastName).compareTo(newNode.lastName) >= 1) {
-					root.lTree = (insert2(root.lTree, newNode));
-				} 
-				else {
+			if (root == null) 
+				root = newNode; 		
+			else 			
+				if ((root.lastName).compareTo(newNode.lastName) >= 1) 
+					root.lTree = (insert2(root.lTree, newNode));			
+				else 
 					root.rTree = (insert2(root.rTree, newNode));
-				}
-			}
 		return root;
 
 	}
 
 	public void searching(String lname, PrintWriter pw) {
 		int count = 0;
-		if (root == null) {
-				System.out.println("not found");
-			} 
+		if (root == null)
+			System.out.println("not found");
 		else
 			searchName(root, lname, count, pw);
 	}
 
 	private BSTNode searchName(BSTNode root, String name, int count, PrintWriter pw) {
 	
-			if (root == null) {
-					System.out.println("Not found");
-			} 
+			if (root == null) 
+				System.out.println("Not found");
+			
 			else {
 				if ((root.lastName).compareTo(name) == 0) {
-						count++;
-						System.out.println("Found " + root.toString() + " took " + count + " Comparisions");
-						pw.println("Found " + root.toString() + " took " + count + " Comparisions");
+					count++;
+					System.out.println("Found " + root.toString() + " took " + count + " Comparisions");
+					pw.println("Found " + root.toString() + " took " + count + " Comparisions");
 				}
 				if ((root.lastName).compareTo(name) > 0) {
-						count++;
-						root.lTree = (searchName(root.lTree, name, count, pw));
+					count++;
+					root.lTree = (searchName(root.lTree, name, count, pw));
 				}
 				if ((root.lastName).compareTo(name) < 0) {
-						count++;
-						root.rTree = (searchName(root.rTree, name, count, pw));
+					count++;
+					root.rTree = (searchName(root.rTree, name, count, pw));
 				}
 			}
 			return root;
@@ -69,7 +63,7 @@ public class BST {
 			
 			if (root == null)
 				System.out.println("Null");
-			printinorder(root, pw);
+				printinorder(root, pw);
 	
 	}
 
