@@ -13,7 +13,9 @@ import java.util.Scanner;
 public class BSTMain {
 	
 	public static void main(String[] args) throws IOException {
-			File file = new File("BSTInput.txt");
+			
+		//input names and birth dates from file
+		File file = new File("BSTInput.txt");
 			Scanner sc = new Scanner(file);
 			BST myTree = new BST();
 			
@@ -24,12 +26,14 @@ public class BSTMain {
 			String a;
 			String b;
 			String c;
-	
+			
+			//separate and define names and dates
 			while (sc.hasNext()) {
 				a = sc.next();
 				b = sc.next();
 				c = sc.next();
 				
+				//input data into tree (lastname, firstname, date born)
 				System.out.println(a + " " + b + " " + c);
 				BSTNode t = new BSTNode(b, a, c);
 				myTree.insert(t);
@@ -48,6 +52,8 @@ public class BSTMain {
 				case 1:					
 					System.out.println("Enter last name for Search");
 					String value = kb.nextLine();
+						
+					//send input name to search
 					myTree.searching(value, prw);
 					break;
 	
