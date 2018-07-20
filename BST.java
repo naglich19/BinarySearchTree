@@ -8,12 +8,10 @@ public class BST {
 	BSTNode root;
 
 	public void insert(BSTNode t) {
-		if (root == null) {
+		if (root == null)
 			root = t;
-		}
-		else {
-			root = insert2(root, t);
-		}
+		else 
+			root = insert2(root, t);		
 	}
 
 	protected BSTNode insert2(BSTNode root, BSTNode newNode) {
@@ -25,7 +23,6 @@ public class BST {
 				else 
 					root.rTree = (insert2(root.rTree, newNode));
 		return root;
-
 	}
 
 	public void searching(String lname, PrintWriter pw) {
